@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    scrollbar-width: none;
+}
+
+body {
+    background: hsl(233, 47%, 7%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+body, html {
+    min-height: 100vh;
+}
+
+.card {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow: scroll;
+    background: hsl(244, 38%, 16%);
+}
+
+.cardImageMobile {
+    display: none;
+}
+
+.cardContent {
+    width: 50%;
+    height: clamp(540px, 80vh, 800px);
+    background: hsl(244, 38%, 16%);
+    padding: 4.5em 2.5em 4.5em 4.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    flex: 1;
+}
+
+.cardImageDesktop {
+    position: sticky;
+    top: 0;
+    width: 50%;
+    object-fit: cover;
+    height: 100%;
+    filter: invert(35%) sepia(100%) saturate(170%) hue-rotate(234deg) brightness(68%) contrast(215%);
+}
+
+.heading {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 2.2em;
+    line-height: 1.2em;
+}
+
+.description {
+    font-family: 'inter';
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.8;
+    width: 70%;
+    font-size: 0.9em;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.stat {
+    text-transform: uppercase;
+    margin-right: 4em;
+    margin-bottom: 1em;
+}
+
+.statTitle {
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.cardContent > *:not(.stats) {
+    padding-bottom: 3rem;
+}
+
+.statDescription {
+    font-family: 'Lexend Deca';
+    letter-spacing: 1.2px;
+    font-size: 0.72rem;
+    font-weight: lighter;
+    color: hsla(0, 0%, 100%, 0.6);
+}
+
+@media screen and (max-width: 872px) {
+    .card {
+        flex-direction: column;
+        height: 80vh;
+    }
+    .cardContent {
+        width: 100%;
+        height: 100%;
+        flex-grow: 1;
+        padding: 2em;
+    }
+
+    .cardImageDesktop {
+        display: none;
+    }
+    .cardImageMobile {
+        display: block;
+        width: 100%;
+        object-fit: contain;
+        filter: invert(35%) sepia(100%) saturate(170%) hue-rotate(234deg) brightness(68%) contrast(215%);
+    }
+}
